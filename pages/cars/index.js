@@ -6,7 +6,7 @@ export default function CarsList(props) {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Cars list
+          <Link href="/">Cars</Link> list
         </h1>
 
         <ul>

@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from 'next/link';
+import Image from "next/image";
 
 export default function Car({ car }) {
   const router = useRouter();
   const { id } = router.query;
+  const img_src = car.image
 
   return (
     <>
@@ -13,7 +16,8 @@ export default function Car({ car }) {
         </title>
       </Head>
       <h1>Hello {id}</h1>
-      <img src={car.image} />
+      <Link href="/cars"><h3>Home</h3></Link>
+      <Image loader={() => img_src} src={img_src} alt={id} width="1000" height="700" />
     </>
   );
 }
